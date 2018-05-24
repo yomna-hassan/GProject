@@ -16,7 +16,14 @@ namespace TicketingSystem.Models
             // Add custom user claims here
             return userIdentity;
         }
+<<<<<<< HEAD
 
+=======
+     
+        //public string image { get; set; }
+        //public int layer_id { get; set; }
+        //public int SLA_id { get; set; }
+>>>>>>> 1d189f3e3cd7d013124f1f516611455a9885720a
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -30,6 +37,9 @@ namespace TicketingSystem.Models
         {
             return new ApplicationDbContext();
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1d189f3e3cd7d013124f1f516611455a9885720a
     }
 }
