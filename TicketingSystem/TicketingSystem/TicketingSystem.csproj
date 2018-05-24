@@ -242,6 +242,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Layer.cs" />
+    <Compile Include="Models\Presence.cs" />
     <Compile Include="Models\SLA.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\UserTicket.cs" />

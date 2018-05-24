@@ -22,8 +22,9 @@ namespace TicketingSystem.Models
         }
      
         public string image { get; set; }
-        []
+        [ForeignKey("Layer")]
         public int layer_id { get; set; }
+        [ForeignKey("SLA")]
         public int SLA_id { get; set; }
 
         public SLA SLA{ get; set; }
