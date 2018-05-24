@@ -9,11 +9,19 @@ namespace TicketingSystem.Models
 {
     public class Presence
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
+        [Column(Order =1)]
+        [ForeignKey("Users")]
         public int user_id { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public DateTime presence_date{ get; set; }
+        [Column(Order = 2)]
+        public DateTime presence_date { get; set; } = DateTime.Now;
         public bool Presence_status { get; set; }
+        public List<ApplicationUser> Users { get; set; }
+
 
     }
 }

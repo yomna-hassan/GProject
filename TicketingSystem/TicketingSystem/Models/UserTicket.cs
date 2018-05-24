@@ -9,13 +9,20 @@ namespace TicketingSystem.Models
 {
     public class UserTicket
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
+        [ForeignKey("Users")]
+        [Column(Order = 1)]
         public int user_id { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
+        [ForeignKey("tickets")]
+        [Column(Order = 2)]
         public int ticket_id{ get; set; }
         public string status { get; set; }
-        public Ticket ticket { get; set; }
-        public ApplicationUser User{ get; set; }
+        public  List<Ticket> tickets { get; set; }
+        public List<ApplicationUser> Users { get; set; }
 
     }
 }

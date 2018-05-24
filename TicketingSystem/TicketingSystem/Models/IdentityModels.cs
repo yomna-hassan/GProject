@@ -45,10 +45,11 @@ namespace TicketingSystem.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet <SLA>SLA { get; set; }
+        public DbSet <SLA> SLA { get; set; }
         public DbSet<Layer> Layer { get; set; }
         public DbSet<Ticket> Ticket { get; set; }
         public DbSet<UserTicket> UserTicket { get; set; }
+        public DbSet<Presence> Presence { get; set; }
 
     }
 }
