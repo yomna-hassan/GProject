@@ -3,8 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
-using TicketingSystem;
-using System.Data.Entity;
 
 namespace TicketingSystem.Models
 {
@@ -18,6 +16,7 @@ namespace TicketingSystem.Models
             // Add custom user claims here
             return userIdentity;
         }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -25,18 +24,12 @@ namespace TicketingSystem.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
-           
         }
         
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Ticket> Ticket { get; set; }
-        public DbSet<SLA> SLA { get; set; }
-        public DbSet<Layer> Layer { get; set; }
-        public DbSet<UserTicket> UserTicket{ get; set; }
-    
 
     }
 }

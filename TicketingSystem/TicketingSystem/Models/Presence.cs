@@ -8,13 +8,13 @@ namespace TicketingSystem.Models
 {
     public class Presence
     {
-        [ForeignKey("User")]
-        public int UserId { get; set; }
-        public bool Status { get; set; }
+       
+        public int user_id { get; set; }
+        public bool status { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime user_date { get; set; }
 
-        public ApplicationUser User { get; set; }
+        public ApplicationUser user { get; set; }
 
 
     }
