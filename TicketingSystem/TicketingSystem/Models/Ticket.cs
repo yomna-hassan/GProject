@@ -10,6 +10,9 @@ namespace TicketingSystem.Models
 {
     public class Ticket
     {
+        /// <summary>
+        /// 
+        /// </summary>
       [Key]
         public int ticket_id { get; set; }
         [Required]
