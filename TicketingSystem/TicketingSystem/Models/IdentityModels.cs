@@ -3,6 +3,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
+using TicketingSystem;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace TicketingSystem.Models
 {
@@ -16,14 +20,18 @@ namespace TicketingSystem.Models
             // Add custom user claims here
             return userIdentity;
         }
-<<<<<<< HEAD
-
-=======
      
-        //public string image { get; set; }
-        //public int layer_id { get; set; }
-        //public int SLA_id { get; set; }
->>>>>>> 1d189f3e3cd7d013124f1f516611455a9885720a
+        public string image { get; set; }
+        [ForeignKey("Layer")]
+        public int layer_id { get; set; }
+        [ForeignKey("SLA")]
+        public int SLA_id { get; set; }
+
+        public SLA SLA{ get; set; }
+        public Layer Layer { get; set; }
+        public UserTicket userticket { get; set; }
+        public Presence presence { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -37,9 +45,10 @@ namespace TicketingSystem.Models
         {
             return new ApplicationDbContext();
         }
-<<<<<<< HEAD
+        public DbSet <SLA>SLA { get; set; }
+        public DbSet<Layer> Layer { get; set; }
+        public DbSet<Ticket> Ticket { get; set; }
+        public DbSet<UserTicket> UserTicket { get; set; }
 
-=======
->>>>>>> 1d189f3e3cd7d013124f1f516611455a9885720a
     }
 }

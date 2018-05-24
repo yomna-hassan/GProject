@@ -241,7 +241,11 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Layer.cs" />
     <Compile Include="Models\Presence.cs" />
+    <Compile Include="Models\SLA.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\UserTicket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
