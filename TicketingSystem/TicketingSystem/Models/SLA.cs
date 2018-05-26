@@ -22,8 +22,6 @@ namespace TicketingSystem.Models
         public DateTime time3 { get; set; }
         [ForeignKey("Layer")]
         public int layer_id { get; set; }
-         public List<Ticket> tickets { get; set; }
-
-
+        public List<Ticket> tickets { get; set; }
     }
 }
