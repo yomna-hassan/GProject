@@ -24,10 +24,13 @@ namespace TicketingSystem.Models
         [ForeignKey("Layers")]
         public int layer_id { get; set; }
         public List<Ticket> tickets { get; set; }
+<<<<<<< HEAD
+=======
         public List<Layer> Layers {get;set; }
         public List<ApplicationUser> Users { get; set; }
         //try this comment to test git extin
 
 
+>>>>>>> 58512df4790888437871aed0d5042bc3c82acede
     }
 }
