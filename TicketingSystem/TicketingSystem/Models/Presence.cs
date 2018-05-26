@@ -7,12 +7,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TicketingSystem.Models
 {
+    [Table("Presence")]
     public class Presence
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
         [Column(Order =1)]
-        [ForeignKey("Users")]
+        [ForeignKey("User")]
         public int user_id { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,7 +21,7 @@ namespace TicketingSystem.Models
         [Column(Order = 2)]
         public DateTime Presence_date { get; set; } = DateTime.Now;
         public bool Presence_status { get; set; }
-        public List<ApplicationUser> Users { get; set; }
+        public ApplicationUser User { get; set; }
 
 
     }
