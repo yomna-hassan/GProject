@@ -13,15 +13,15 @@ namespace TicketingSystem.Models
         [Key]
         [ForeignKey("Users")]
         [Column(Order = 1)]
-        public int user_id { get; set; }
+        public int User_id { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
-        [ForeignKey("tickets")]
+        [ForeignKey("Tickets")]
         [Column(Order = 2)]
-        public int ticket_id{ get; set; }
-        public string status { get; set; }
-        public  List<Ticket> tickets { get; set; }
+        public int Ticket_id{ get; set; }
+        public string Status { get; set; }
+        public  List<Ticket> Tickets { get; set; }
         public List<ApplicationUser> Users { get; set; }
 
     }

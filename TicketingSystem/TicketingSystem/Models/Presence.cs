@@ -18,7 +18,7 @@ namespace TicketingSystem.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Column(Order = 2)]
-        public DateTime presence_date { get; set; } = DateTime.Now;
+        public DateTime Presence_date { get; set; } = DateTime.Now;
         public bool Presence_status { get; set; }
         public List<ApplicationUser> Users { get; set; }
 

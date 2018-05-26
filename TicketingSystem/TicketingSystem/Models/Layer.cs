@@ -10,11 +10,11 @@ namespace TicketingSystem.Models
     public class Layer
     {
         [Key]
-        public int layer_id { get; set; }
+        public int Layer_id { get; set; }
         [Required]
-        public string layer_name { get; set; }
+        public string Layer_name { get; set; }
         public List<ApplicationUser>  Users { get; set; }
-        public SLA sla { get; set; }
+        public SLA Sla { get; set; }
 
     }
 }
