@@ -159,6 +159,7 @@ C:\Users\Eman\Documents\GitHub\GProject\TicketingSystem\TicketingSystem\obj\Debu
 C:\Users\Eman\Documents\GitHub\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.GenerateResource.Cache
 C:\Users\Eman\Documents\GitHub\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.dll
 C:\Users\Eman\Documents\GitHub\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.pdb
+<<<<<<< HEAD
 F:\GProject\TicketingSystem\TicketingSystem\bin\ApplicationInsights.config
 F:\GProject\TicketingSystem\TicketingSystem\bin\TicketingSystem.dll.config
 F:\GProject\TicketingSystem\TicketingSystem\bin\TicketingSystem.dll
@@ -240,3 +241,6 @@ F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.Gen
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.CoreCompileInputs.cache
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.dll
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.pdb
+=======
+C:\Users\Eman\Documents\GitHub\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Migrations.m2.resources
+>>>>>>> 58512df4790888437871aed0d5042bc3c82acede

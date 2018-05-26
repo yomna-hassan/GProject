@@ -7,22 +7,21 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TicketingSystem.Models
 {
-    public class UserTicket
+    public class Presence
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
+        [Column(Order =1)]
         [ForeignKey("Users")]
-        [Column(Order = 1)]
         public int user_id { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        [ForeignKey("tickets")]
         [Column(Order = 2)]
-        public int ticket_id{ get; set; }
-        public string status { get; set; }
-        public  List<Ticket> tickets { get; set; }
+        public DateTime presence_date { get; set; } = DateTime.Now;
+        public bool Presence_status { get; set; }
         public List<ApplicationUser> Users { get; set; }
+
 
     }
 }

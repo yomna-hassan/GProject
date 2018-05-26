@@ -13,7 +13,7 @@ namespace TicketingSystem.Models
         public int layer_id { get; set; }
         [Required]
         public string layer_name { get; set; }
-        public ApplicationUser User { get; set; }
+        public List<ApplicationUser>  Users { get; set; }
         public SLA sla { get; set; }
 
     }

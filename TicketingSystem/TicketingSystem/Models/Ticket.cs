@@ -8,24 +8,29 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TicketingSystem.Models
 {
+
+    public enum Status : byte { Done,Open,OnHold,OverDu};
     public class Ticket
     {
-      [Key]
-        public int ticket_id { get; set; }
-        [Required]
-        public string ticket_name { get; set; }
-        [Required]
-        public DateTime ticket_date { get; set; }
 
-        public string description { get; set; }
+       [Key]
+        public int Ticket_Id { get; set; }
         [Required]
-        public string clientName{ get; set; }
+        public string Ticket_Name { get; set; }
         [Required]
-        public int SLA_id { get; set; }
 
-        public SLA sla { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime Ticket_date { get; set; } = DateTime.Now;
 
-        public string status {get; set; }
+        public string Description { get; set; }
+        [Required]
+        public string ClientName{ get; set; }
+        [Required]
+        public int SLA_Id { get; set; }
+
+        public SLA Sla { get; set; }
+
+        public Status status {get; set; }
 
 
 

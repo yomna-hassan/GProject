@@ -15,13 +15,22 @@ namespace TicketingSystem.Models
         [Required]
         public string SLA_name { get; set; }
         [Required]
-        public DateTime time1 { get; set; }
+        public DateTime L1_Time { get; set; }
         [Required]
-        public DateTime time2 { get; set; }
+        public DateTime L2_Time { get; set; }
         [Required]
-        public DateTime time3 { get; set; }
-        [ForeignKey("Layer")]
+        public DateTime L3_Time { get; set; }
+
+        [ForeignKey("Layers")]
         public int layer_id { get; set; }
         public List<Ticket> tickets { get; set; }
+<<<<<<< HEAD
+=======
+        public List<Layer> Layers {get;set; }
+        public List<ApplicationUser> Users { get; set; }
+        //try this comment to test git extin
+
+
+>>>>>>> 58512df4790888437871aed0d5042bc3c82acede
     }
 }
