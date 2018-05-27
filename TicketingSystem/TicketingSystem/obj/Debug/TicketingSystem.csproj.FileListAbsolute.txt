@@ -74,9 +74,8 @@ F:\GProject\TicketingSystem\TicketingSystem\bin\Microsoft.AI.ServerTelemetryChan
 F:\GProject\TicketingSystem\TicketingSystem\bin\Microsoft.AI.WindowsServer.xml
 F:\GProject\TicketingSystem\TicketingSystem\bin\Microsoft.AI.Web.xml
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csprojResolveAssemblyReference.cache
-F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Migrations.m1.resources
-F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Migrations.m2.resources
-F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.GenerateResource.Cache
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.CoreCompileInputs.cache
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.dll
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.pdb
+F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Migrations.m11.resources
+F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.GenerateResource.Cache

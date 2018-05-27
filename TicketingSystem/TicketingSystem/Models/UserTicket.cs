@@ -14,7 +14,7 @@ namespace TicketingSystem.Models
         [Key]
         [ForeignKey("User")]
         [Column(Order = 1)]
-        public int User_id { get; set; }
+        public string User_id { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
