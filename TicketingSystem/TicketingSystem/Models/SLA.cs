@@ -8,6 +8,7 @@ using TicketingSystem;
 
 namespace TicketingSystem.Models
 {
+    [Table("SLA")]
     public class SLA
     {
         [Key]
@@ -21,14 +22,9 @@ namespace TicketingSystem.Models
         [Required]
         public DateTime L3_Time { get; set; }
 
-        [ForeignKey("Layers")]
-        public int layer_id { get; set; }
         public List<Ticket> tickets { get; set; }
+        public List<Layer_SLA> LayerSLAs {get;set; }
 
-
-        public List<Layer> Layers {get;set; }
-        public List<ApplicationUser> Users { get; set; }
-        //try this comment to test git extin
 
 
 

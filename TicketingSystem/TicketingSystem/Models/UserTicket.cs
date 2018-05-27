@@ -7,22 +7,27 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TicketingSystem.Models
 {
+    [Table("User-Ticket")]
     public class UserTicket
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
-        [ForeignKey("Users")]
+        [ForeignKey("User")]
         [Column(Order = 1)]
-        public int User_id { get; set; }
+        public string User_id { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
-        [ForeignKey("Tickets")]
+        [ForeignKey("Ticket")]
         [Column(Order = 2)]
         public int Ticket_id{ get; set; }
-        public string Status { get; set; }
-        public  List<Ticket> Tickets { get; set; }
-        public List<ApplicationUser> Users { get; set; }
+
+        public DateTime StartTicket { get; set; }
+
+        //from enum in ticket
+        public Status Status { get; set; }
+        public  Ticket Ticket { get; set; }
+        public ApplicationUser User { get; set; }
 
     }
 }

@@ -7,6 +7,7 @@ using System.Data.Entity;
 using TicketingSystem;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace TicketingSystem.Models
 {
@@ -24,13 +25,9 @@ namespace TicketingSystem.Models
         public string image { get; set; }
         [ForeignKey("Layer")]
         public int layer_id { get; set; }
-        [ForeignKey("SLA")]
-        public int SLA_id { get; set; }
-
-        public SLA SLA{ get; set; }
         public Layer Layer { get; set; }
-        public UserTicket userticket { get; set; }
-        public Presence presence { get; set; }
+        public List<UserTicket> usertickets { get; set; }
+        public List<Presence> presences { get; set; }
 
     }
 
@@ -45,11 +42,12 @@ namespace TicketingSystem.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet <SLA> SLA { get; set; }
-        public DbSet<Layer> Layer { get; set; }
-        public DbSet<Ticket> Ticket { get; set; }
-        public DbSet<UserTicket> UserTicket { get; set; }
-        public DbSet<Presence> Presence { get; set; }
+        public DbSet <SLA> SLAs { get; set; }
+        public DbSet<Layer> Layers { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<UserTicket> UserTickets { get; set; }
+        public DbSet<Presence> Presences { get; set; }
+        public DbSet<Layer_SLA> LayerSLAs { get; set; }
 
     }
 }
