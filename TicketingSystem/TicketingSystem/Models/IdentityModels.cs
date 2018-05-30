@@ -8,6 +8,8 @@ using TicketingSystem;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace TicketingSystem.Models
 {
@@ -21,10 +23,15 @@ namespace TicketingSystem.Models
             // Add custom user claims here
             return userIdentity;
         }
+
      
+        
         public string image { get; set; }
         [ForeignKey("Layer")]
-        public int layer_id { get; set; }
+
+        [XmlIgnore]
+        [JsonIgnore]
+        public int? layer_id { get; set; }
         public Layer Layer { get; set; }
         public List<UserTicket> usertickets { get; set; }
         public List<Presence> presences { get; set; }
