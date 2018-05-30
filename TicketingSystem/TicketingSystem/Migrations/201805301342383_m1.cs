@@ -3,7 +3,7 @@ namespace TicketingSystem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class m11 : DbMigration
+    public partial class m1 : DbMigration
     {
         public override void Up()
         {
@@ -77,8 +77,9 @@ namespace TicketingSystem.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        num = c.Int(),
                         image = c.String(),
-                        layer_id = c.Int(nullable: false),
+                        layer_id = c.Int(),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -92,7 +93,7 @@ namespace TicketingSystem.Migrations
                         UserName = c.String(nullable: false, maxLength: 256),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Layer", t => t.layer_id, cascadeDelete: true)
+                .ForeignKey("dbo.Layer", t => t.layer_id)
                 .Index(t => t.layer_id)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");
             
