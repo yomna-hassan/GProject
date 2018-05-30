@@ -233,9 +233,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805271254295_m11.cs" />
-    <Compile Include="Migrations\201805271254295_m11.Designer.cs">
-      <DependentUpon>201805271254295_m11.cs</DependentUpon>
+    <Compile Include="Migrations\201805301342383_m1.cs" />
+    <Compile Include="Migrations\201805301342383_m1.Designer.cs">
+      <DependentUpon>201805301342383_m1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805301344329_m2.cs" />
+    <Compile Include="Migrations\201805301344329_m2.Designer.cs">
+      <DependentUpon>201805301344329_m2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -259,6 +263,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Login.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -283,6 +288,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -326,8 +332,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805271254295_m11.resx">
-      <DependentUpon>201805271254295_m11.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805301342383_m1.resx">
+      <DependentUpon>201805301342383_m1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805301344329_m2.resx">
+      <DependentUpon>201805301344329_m2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
