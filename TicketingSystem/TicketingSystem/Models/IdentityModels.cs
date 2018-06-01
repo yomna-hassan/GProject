@@ -56,6 +56,7 @@ namespace TicketingSystem.Models
         public DbSet<UserTicket> UserTickets { get; set; }
         public DbSet<Presence> Presences { get; set; }
         public DbSet<Layer_SLA> LayerSLAs { get; set; }
+        public DbSet<ConnectedUser> ConnectedUsers { get; set; }
 
     }
 }

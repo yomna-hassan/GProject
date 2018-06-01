@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.3.min.js"></script>
+    <script src="signalr/hubs">
+
+    </script>
+    <script>
+        $(function () {
+
+
+        })
+
+        function create() {
+            var hub = $.connection.hubTicket;
+            $.connection.hub.start();
+
+        }
+
+        hub.client.newTicket = function (obj, conn) {
+
+
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+   <form>
+       <input type="text" id="ticketName" />
+       <input type="text" id="Descrription" />
+       <input type="text" id="clientName" />
+       <select id="sla">
+           <option></option>
+       </select>
+       <select id="layer">
+           <option></option>
+       </select>
+       <select id="tech">
+           <option></option>
+       </select>
+       <input type="submit" id="btn" value="Create" onclick="create()"/>
+   </form> 
+</body>
+</html>

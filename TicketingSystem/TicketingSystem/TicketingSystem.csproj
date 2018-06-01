@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.3\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.3\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -229,29 +235,14 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SlaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Migrations\201805301342383_m1.cs" />
-    <Compile Include="Migrations\201805301342383_m1.Designer.cs">
-      <DependentUpon>201805301342383_m1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805301344329_m2.cs" />
-    <Compile Include="Migrations\201805301344329_m2.Designer.cs">
-      <DependentUpon>201805301344329_m2.cs</DependentUpon>
-=======
-<<<<<<< HEAD
-    <Compile Include="Migrations\201806011251253_m3.cs" />
-    <Compile Include="Migrations\201806011251253_m3.Designer.cs">
-      <DependentUpon>201806011251253_m3.cs</DependentUpon>
-=======
-    <Compile Include="Migrations\201805310949402_m4.cs" />
-    <Compile Include="Migrations\201805310949402_m4.Designer.cs">
-      <DependentUpon>201805310949402_m4.cs</DependentUpon>
->>>>>>> f4690f7cd1a294dc6f5b347afa5a641a441ee1a9
->>>>>>> 4541ca33622c56bae64a6ab5c3263a2532c1d682
+    <Compile Include="Migrations\201806011445326_m1.cs" />
+    <Compile Include="Migrations\201806011445326_m1.Designer.cs">
+      <DependentUpon>201806011445326_m1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -273,6 +264,7 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="CreateTicket.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -306,6 +298,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.3.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.3.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -345,21 +339,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Migrations\201805301342383_m1.resx">
-      <DependentUpon>201805301342383_m1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805301344329_m2.resx">
-      <DependentUpon>201805301344329_m2.cs</DependentUpon>
-=======
-<<<<<<< HEAD
-    <EmbeddedResource Include="Migrations\201806011251253_m3.resx">
-      <DependentUpon>201806011251253_m3.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Migrations\201805310949402_m4.resx">
-      <DependentUpon>201805310949402_m4.cs</DependentUpon>
->>>>>>> f4690f7cd1a294dc6f5b347afa5a641a441ee1a9
->>>>>>> 4541ca33622c56bae64a6ab5c3263a2532c1d682
+    <EmbeddedResource Include="Migrations\201806011445326_m1.resx">
+      <DependentUpon>201806011445326_m1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
