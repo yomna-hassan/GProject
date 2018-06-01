@@ -78,3 +78,4 @@ C:\GraduationProject\GProject\TicketingSystem\TicketingSystem\obj\Debug\Ticketin
 C:\GraduationProject\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.GenerateResource.Cache
 C:\GraduationProject\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.dll
 C:\GraduationProject\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.pdb
+C:\GraduationProject\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csprojResolveAssemblyReference.cache
