@@ -35,6 +35,7 @@ namespace TicketingSystem.Models
         public Layer Layer { get; set; }
         public List<UserTicket> usertickets { get; set; }
         public List<Presence> presences { get; set; }
+        public List<ConnectedUser> connecteduser { get; set; }
 
     }
 

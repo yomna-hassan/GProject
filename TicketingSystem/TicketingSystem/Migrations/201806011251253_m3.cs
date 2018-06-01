@@ -3,7 +3,7 @@ namespace TicketingSystem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class m1 : DbMigration
+    public partial class m3 : DbMigration
     {
         public override void Up()
         {
@@ -35,9 +35,9 @@ namespace TicketingSystem.Migrations
                     {
                         SLA_id = c.Int(nullable: false, identity: true),
                         SLA_name = c.String(nullable: false),
-                        L1_Time = c.DateTime(nullable: false),
-                        L2_Time = c.DateTime(nullable: false),
-                        L3_Time = c.DateTime(nullable: false),
+                        L1_Time = c.Int(),
+                        L2_Time = c.Int(),
+                        L3_Time = c.Int(),
                     })
                 .PrimaryKey(t => t.SLA_id);
             
@@ -77,7 +77,6 @@ namespace TicketingSystem.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        num = c.Int(),
                         image = c.String(),
                         layer_id = c.Int(),
                         Email = c.String(maxLength: 256),
@@ -108,6 +107,17 @@ namespace TicketingSystem.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
+            
+            CreateTable(
+                "dbo.ConnectedUser",
+                c => new
+                    {
+                        ConnectionId = c.String(nullable: false, maxLength: 128),
+                        UserId = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.ConnectionId)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId)
                 .Index(t => t.UserId);
             
             CreateTable(
@@ -168,6 +178,7 @@ namespace TicketingSystem.Migrations
             DropForeignKey("dbo.Presence", "user_id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUsers", "layer_id", "dbo.Layer");
+            DropForeignKey("dbo.ConnectedUser", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.User-Ticket", "Ticket_id", "dbo.Ticket");
             DropForeignKey("dbo.Ticket", "SLA_Id", "dbo.SLA");
@@ -177,6 +188,7 @@ namespace TicketingSystem.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.Presence", new[] { "user_id" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
+            DropIndex("dbo.ConnectedUser", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUsers", new[] { "layer_id" });
@@ -189,6 +201,7 @@ namespace TicketingSystem.Migrations
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.Presence");
             DropTable("dbo.AspNetUserLogins");
+            DropTable("dbo.ConnectedUser");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.User-Ticket");
