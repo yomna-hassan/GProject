@@ -3,10 +3,58 @@ namespace TicketingSystem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class m5 : DbMigration
+    public partial class mmh : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.ConnectedUser",
+                c => new
+                    {
+                        ConnectionId = c.String(nullable: false, maxLength: 128),
+                        UserId = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.ConnectionId)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId)
+                .Index(t => t.UserId);
+            
+            CreateTable(
+                "dbo.AspNetUsers",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        image = c.String(),
+                        layer_id = c.Int(),
+                        Email = c.String(maxLength: 256),
+                        EmailConfirmed = c.Boolean(nullable: false),
+                        PasswordHash = c.String(),
+                        SecurityStamp = c.String(),
+                        PhoneNumber = c.String(),
+                        PhoneNumberConfirmed = c.Boolean(nullable: false),
+                        TwoFactorEnabled = c.Boolean(nullable: false),
+                        LockoutEndDateUtc = c.DateTime(),
+                        LockoutEnabled = c.Boolean(nullable: false),
+                        AccessFailedCount = c.Int(nullable: false),
+                        UserName = c.String(nullable: false, maxLength: 256),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Layer", t => t.layer_id)
+                .Index(t => t.layer_id)
+                .Index(t => t.UserName, unique: true, name: "UserNameIndex");
+            
+            CreateTable(
+                "dbo.AspNetUserClaims",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        UserId = c.String(nullable: false, maxLength: 128),
+                        ClaimType = c.String(),
+                        ClaimValue = c.String(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.UserId);
+            
             CreateTable(
                 "dbo.Layer",
                 c => new
@@ -73,54 +121,6 @@ namespace TicketingSystem.Migrations
                 .Index(t => t.Ticket_id);
             
             CreateTable(
-                "dbo.AspNetUsers",
-                c => new
-                    {
-                        Id = c.String(nullable: false, maxLength: 128),
-                        image = c.String(),
-                        layer_id = c.Int(),
-                        Email = c.String(maxLength: 256),
-                        EmailConfirmed = c.Boolean(nullable: false),
-                        PasswordHash = c.String(),
-                        SecurityStamp = c.String(),
-                        PhoneNumber = c.String(),
-                        PhoneNumberConfirmed = c.Boolean(nullable: false),
-                        TwoFactorEnabled = c.Boolean(nullable: false),
-                        LockoutEndDateUtc = c.DateTime(),
-                        LockoutEnabled = c.Boolean(nullable: false),
-                        AccessFailedCount = c.Int(nullable: false),
-                        UserName = c.String(nullable: false, maxLength: 256),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Layer", t => t.layer_id)
-                .Index(t => t.layer_id)
-                .Index(t => t.UserName, unique: true, name: "UserNameIndex");
-            
-            CreateTable(
-                "dbo.AspNetUserClaims",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        UserId = c.String(nullable: false, maxLength: 128),
-                        ClaimType = c.String(),
-                        ClaimValue = c.String(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
-            
-            CreateTable(
-                "dbo.ConnectedUser",
-                c => new
-                    {
-                        ConnectionId = c.String(nullable: false, maxLength: 128),
-                        UserId = c.String(maxLength: 128),
-                    })
-                .PrimaryKey(t => t.ConnectionId)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId)
-                .Index(t => t.UserId);
-            
-            CreateTable(
                 "dbo.AspNetUserLogins",
                 c => new
                     {
@@ -172,43 +172,43 @@ namespace TicketingSystem.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Layer_SLA", "SLAId", "dbo.SLA");
-            DropForeignKey("dbo.User-Ticket", "User_id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.ConnectedUser", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.Presence", "user_id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUsers", "layer_id", "dbo.Layer");
-            DropForeignKey("dbo.ConnectedUser", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Layer_SLA", "SLAId", "dbo.SLA");
+            DropForeignKey("dbo.User-Ticket", "User_id", "dbo.AspNetUsers");
             DropForeignKey("dbo.User-Ticket", "Ticket_id", "dbo.Ticket");
             DropForeignKey("dbo.Ticket", "SLA_Id", "dbo.SLA");
             DropForeignKey("dbo.Layer_SLA", "LayerId", "dbo.Layer");
+            DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.Presence", new[] { "user_id" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
-            DropIndex("dbo.ConnectedUser", new[] { "UserId" });
-            DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
-            DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.AspNetUsers", new[] { "layer_id" });
             DropIndex("dbo.User-Ticket", new[] { "Ticket_id" });
             DropIndex("dbo.User-Ticket", new[] { "User_id" });
             DropIndex("dbo.Ticket", new[] { "SLA_Id" });
             DropIndex("dbo.Layer_SLA", new[] { "SLAId" });
             DropIndex("dbo.Layer_SLA", new[] { "LayerId" });
+            DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
+            DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("dbo.AspNetUsers", new[] { "layer_id" });
+            DropIndex("dbo.ConnectedUser", new[] { "UserId" });
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.Presence");
             DropTable("dbo.AspNetUserLogins");
-            DropTable("dbo.ConnectedUser");
-            DropTable("dbo.AspNetUserClaims");
-            DropTable("dbo.AspNetUsers");
             DropTable("dbo.User-Ticket");
             DropTable("dbo.Ticket");
             DropTable("dbo.SLA");
             DropTable("dbo.Layer_SLA");
             DropTable("dbo.Layer");
+            DropTable("dbo.AspNetUserClaims");
+            DropTable("dbo.AspNetUsers");
+            DropTable("dbo.ConnectedUser");
         }
     }
 }
