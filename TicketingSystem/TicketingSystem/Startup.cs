@@ -64,6 +64,7 @@ namespace TicketingSystem
            
             ConfigureAuth(app);
             CreateRoleAndUser();
+            app.MapSignalR();
             
 
         }
