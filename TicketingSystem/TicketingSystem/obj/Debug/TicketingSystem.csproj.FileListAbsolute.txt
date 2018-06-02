@@ -76,5 +76,6 @@ F:\GProject\TicketingSystem\TicketingSystem\bin\Microsoft.AI.Web.xml
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.CoreCompileInputs.cache
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.dll
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.pdb
-F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Migrations.m5.resources
+F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csprojResolveAssemblyReference.cache
+F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Migrations.m1.resources
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.GenerateResource.Cache
