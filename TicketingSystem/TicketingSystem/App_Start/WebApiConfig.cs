@@ -19,6 +19,7 @@ namespace TicketingSystem
             // Web API configuration and services
             config.EnableCors(new EnableCorsAttribute("http://localhost:4200", headers :"*", methods :"*"));
 
+            config.EnableCors();
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
            
