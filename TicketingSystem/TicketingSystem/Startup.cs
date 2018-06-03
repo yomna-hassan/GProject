@@ -6,7 +6,7 @@ using Owin;
 using TicketingSystem.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-
+using Microsoft.Owin.Cors;
 
 [assembly: OwinStartup(typeof(TicketingSystem.Startup))]
 
@@ -61,7 +61,8 @@ namespace TicketingSystem
         }
         public void Configuration(IAppBuilder app)
         {
-           
+
+            app.UseCors(CorsOptions.AllowAll);
             ConfigureAuth(app);
             CreateRoleAndUser();
             app.MapSignalR();
