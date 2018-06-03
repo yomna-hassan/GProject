@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -15,7 +17,8 @@ namespace TicketingSystem.Controllers
         List<ApplicationUser> Technicians = new List<ApplicationUser>();
         ApplicationDbContext db = new ApplicationDbContext();
         [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
-        [Route("api/layer/{LayerId}")]
+        [Route("api/technician/{LayerId}")]
+        [HttpGet]
         public IHttpActionResult GetTechByLayer(int LayerId)
         {
             Technicians = db.Users.Where(u => u.layer_id == LayerId).ToList();
@@ -24,5 +27,8 @@ namespace TicketingSystem.Controllers
             else
                 return Ok(Technicians);
         }
+
+
+
     }
 }

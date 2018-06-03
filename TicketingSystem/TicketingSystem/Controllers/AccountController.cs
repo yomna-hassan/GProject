@@ -328,7 +328,7 @@ namespace TicketingSystem.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            var user = new ApplicationUser() { UserName = model.UserName, Email = model.Email,layer_id=model.layer_id};
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
