@@ -77,7 +77,6 @@ F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.Cor
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.dll
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.pdb
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csprojResolveAssemblyReference.cache
-F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Migrations.m1.resources
 F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.GenerateResource.Cache
 C:\GraduationProject\GProject\TicketingSystem\TicketingSystem\bin\ApplicationInsights.config
 C:\GraduationProject\GProject\TicketingSystem\TicketingSystem\bin\TicketingSystem.dll.config
@@ -159,3 +158,8 @@ C:\GraduationProject\GProject\TicketingSystem\TicketingSystem\obj\Debug\Ticketin
 C:\GraduationProject\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.pdb
 C:\GraduationProject\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Migrations.mmh.resources
 C:\GraduationProject\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csproj.GenerateResource.Cache
+F:\GProject\TicketingSystem\TicketingSystem\bin\Microsoft.AspNet.SignalR.Core.dll
+F:\GProject\TicketingSystem\TicketingSystem\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+F:\GProject\TicketingSystem\TicketingSystem\bin\Microsoft.AspNet.SignalR.Core.xml
+F:\GProject\TicketingSystem\TicketingSystem\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+F:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Migrations.mmh.resources
