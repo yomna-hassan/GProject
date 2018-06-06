@@ -246,3 +246,5 @@ E:\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.pdb
 E:\GProject\TicketingSystem\TicketingSystem\bin\System.Web.Cors.dll
 E:\GProject\TicketingSystem\TicketingSystem\bin\System.Web.Http.Cors.dll
 E:\GProject\TicketingSystem\TicketingSystem\bin\System.Web.Http.Cors.xml
+E:\GProject\TicketingSystem\TicketingSystem\bin\Microsoft.Owin.Cors.dll
+E:\GProject\TicketingSystem\TicketingSystem\bin\Microsoft.Owin.Cors.xml
