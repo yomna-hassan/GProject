@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Cors;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
@@ -17,7 +16,10 @@ namespace TicketingSystem
 
 
             // Web API configuration and services
-            config.EnableCors(new EnableCorsAttribute("http://localhost:4200", headers :"*", methods :"*"));
+            //var corsAttr = new EnableCorsAttribute("http://localhost:4200", "*", "*");
+            //config.EnableCors(corsAttr);
+            //config.EnableCors();
+
 
             //config.EnableCors();
             config.Formatters.Remove(config.Formatters.XmlFormatter);

@@ -3,7 +3,7 @@ namespace TicketingSystem.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class mmh : DbMigration
+    public partial class m1 : DbMigration
     {
         public override void Up()
         {
@@ -93,9 +93,9 @@ namespace TicketingSystem.Migrations
                 "dbo.Ticket",
                 c => new
                     {
-                        Ticket_Id = c.Int(nullable: false),
+                        Ticket_Id = c.Int(nullable: false, identity: true),
                         Ticket_Name = c.String(nullable: false),
-                        Ticket_date = c.DateTime(nullable: false),
+                        Ticket_date = c.DateTime(),
                         Description = c.String(),
                         ClientName = c.String(nullable: false),
                         status = c.Byte(nullable: false),
@@ -111,7 +111,7 @@ namespace TicketingSystem.Migrations
                     {
                         User_id = c.String(nullable: false, maxLength: 128),
                         Ticket_id = c.Int(nullable: false),
-                        StartTicket = c.DateTime(nullable: false),
+                        StartTicket = c.DateTime(),
                         Status = c.Byte(nullable: false),
                     })
                 .PrimaryKey(t => new { t.User_id, t.Ticket_id })
