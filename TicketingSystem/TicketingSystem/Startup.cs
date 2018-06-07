@@ -55,44 +55,7 @@ namespace TicketingSystem
                 role.Name = "Technician";
                 rolemanager.Create(role);
 
-                var tech = new ApplicationUser();
-                tech.UserName = "Mohamed Kareem";
-                tech.Email = "Mohamed@gmail.com";
-                tech.layer_id = 1;
-
-                string userpassword2 = "Mohamed_11";
-                var checkuser2 = usermanager.Create(tech, userpassword2);
-
-                if (checkuser2.Succeeded)
-                {
-                    var result = usermanager.AddToRole(tech.Id, "Technician");
-                }
-
-                var tech2 = new ApplicationUser();
-                tech2.UserName = "Amir Ahmed";
-                tech2.Email = "Amir@gmail.com";
-                tech2.layer_id = 2;
-
-                string userpassword3 = "Amir_10";
-                var checkuser3 = usermanager.Create(tech2, userpassword3);
-
-                if (checkuser3.Succeeded)
-                {
-                    var result = usermanager.AddToRole(tech2.Id, "Technician");
-                }
-
-                var tech3 = new ApplicationUser();
-                tech2.UserName = "Waleed Seif";
-                tech2.Email = "Waleed@gmail.com";
-                tech2.layer_id = 3;
-
-                string userpassword4 = "Waleed_33";
-                var checkuser4 = usermanager.Create(tech3, userpassword4);
-
-                if (checkuser4.Succeeded)
-                {
-                    var result = usermanager.AddToRole(tech3.Id, "Technician");
-                }
+             
             }
            
            
@@ -103,8 +66,17 @@ namespace TicketingSystem
   
         public void Configuration(IAppBuilder app)
         {
+<<<<<<< HEAD
+            app.UseCors(CorsOptions.AllowAll);
 
+=======
+
+<<<<<<< HEAD
             //app.UseCors(CorsOptions.AllowAll);
+=======
+            app.UseCors(CorsOptions.AllowAll);
+>>>>>>> ccfe3c1a69bd02e3961fc437d87c69c92994ddee
+>>>>>>> 49e9afba5e092a86fc8eb69ca512f0e2392fe694
             ConfigureAuth(app);
             CreateRoleAndUser();
             app.MapSignalR();
