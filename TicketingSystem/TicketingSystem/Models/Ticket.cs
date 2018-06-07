@@ -5,6 +5,8 @@ using System.Web;
 using System.Data;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace TicketingSystem.Models
 {
@@ -20,9 +22,9 @@ namespace TicketingSystem.Models
         [Required]
         public string Ticket_Name { get; set; }
 
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public DateTime Ticket_date { get; set; } = DateTime.Now;
+    
+        ///[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public DateTime? Ticket_date { get; set; }
 
         public string Description { get; set; }
 
@@ -33,7 +35,10 @@ namespace TicketingSystem.Models
         [Required]
         [ForeignKey("Sla")]
         public int SLA_Id { get; set; }
-        public SLA Sla { get; set; }
+
+        [XmlIgnore]
+        [JsonIgnore]
+        public virtual SLA Sla { get; set; }
 
         public List<UserTicket> UserTickets { get; set; }
 

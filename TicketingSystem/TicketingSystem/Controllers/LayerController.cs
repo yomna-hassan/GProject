@@ -4,24 +4,25 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Cors;
 using TicketingSystem.Models;
 
 namespace TicketingSystem.Controllers
 {
+    //[EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class LayerController : ApiController
     {
         ApplicationDbContext db = new ApplicationDbContext();
         List<Layer> Layers = new List<Layer>();
         List<int> Layers_Id = new List<int>();
         List<Layer_SLA> Layer_Sla = new List<Layer_SLA>();
-        [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
+        //[EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
+
         [HttpGet]
-        [Route("api/layer/{sla}")]
-        public IHttpActionResult Get(int sla)
+        [Route("api/layer/{SLA_id}")]
+        public IHttpActionResult Get(int SLA_id)
         {
             
-            Layer_Sla = db.LayerSLAs.Where(n => n.SLAId == sla).ToList();
+            Layer_Sla = db.LayerSLAs.Where(n => n.SLAId == SLA_id).ToList();
             //return Ok(Layer_Sla);
             foreach (var s in Layer_Sla)
             {

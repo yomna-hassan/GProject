@@ -22,7 +22,7 @@ namespace TicketingSystem.Models
         [Column(Order = 2)]
         public int Ticket_id{ get; set; }
 
-        public DateTime StartTicket { get; set; }
+        public DateTime? StartTicket { get; set; }
 
         //from enum in ticket
         public Status Status { get; set; }
