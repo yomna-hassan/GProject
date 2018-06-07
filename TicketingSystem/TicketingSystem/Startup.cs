@@ -66,13 +66,9 @@ namespace TicketingSystem
   
         public void Configuration(IAppBuilder app)
         {
-<<<<<<< HEAD
-            app.UseCors(CorsOptions.AllowAll);
-
-=======
 
             app.UseCors(CorsOptions.AllowAll);
->>>>>>> ccfe3c1a69bd02e3961fc437d87c69c92994ddee
+
             ConfigureAuth(app);
             CreateRoleAndUser();
             app.MapSignalR();
