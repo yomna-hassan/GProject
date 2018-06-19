@@ -27,7 +27,7 @@ namespace TicketingSystem.Models
         //from enum in ticket
         public Status Status { get; set; }
         public  Ticket Ticket { get; set; }
-        public ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
     }
 }

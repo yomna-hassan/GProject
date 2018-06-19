@@ -7,6 +7,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 
+
 namespace TicketingSystem
 {
     public static class WebApiConfig
@@ -20,8 +21,8 @@ namespace TicketingSystem
             //config.EnableCors(corsAttr);
             //config.EnableCors();
 
-
-            //config.EnableCors();
+            
+            config.EnableCors();
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
            
