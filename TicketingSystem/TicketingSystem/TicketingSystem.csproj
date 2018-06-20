@@ -242,6 +242,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayerController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SlaController.cs" />
     <Compile Include="Controllers\TechnicianController.cs" />
     <Compile Include="Controllers\TickController.cs" />
@@ -250,19 +251,37 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806041453077_m1.cs" />
-    <Compile Include="Migrations\201806041453077_m1.Designer.cs">
-      <DependentUpon>201806041453077_m1.cs</DependentUpon>
+    <Compile Include="Hubs\NotificationHub.cs" />
+    <Compile Include="Migrations\201806101536234_m1.cs" />
+    <Compile Include="Migrations\201806101536234_m1.Designer.cs">
+      <DependentUpon>201806101536234_m1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806062204537_m2.cs" />
-    <Compile Include="Migrations\201806062204537_m2.Designer.cs">
-      <DependentUpon>201806062204537_m2.cs</DependentUpon>
+    <Compile Include="Migrations\201806131005511_m2.cs" />
+    <Compile Include="Migrations\201806131005511_m2.Designer.cs">
+      <DependentUpon>201806131005511_m2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806181218055_m3.cs" />
+    <Compile Include="Migrations\201806181218055_m3.Designer.cs">
+      <DependentUpon>201806181218055_m3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806181631101_m5.cs" />
+    <Compile Include="Migrations\201806181631101_m5.Designer.cs">
+      <DependentUpon>201806181631101_m5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806181644296_m6.cs" />
+    <Compile Include="Migrations\201806181644296_m6.Designer.cs">
+      <DependentUpon>201806181644296_m6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806181654173_m9.cs" />
+    <Compile Include="Migrations\201806181654173_m9.Designer.cs">
+      <DependentUpon>201806181654173_m9.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ConnectedUser.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IntegratedModel.cs" />
     <Compile Include="Models\Layer-SLA.cs" />
     <Compile Include="Models\Layer.cs" />
     <Compile Include="Models\Presence.cs" />
@@ -307,6 +326,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -321,7 +341,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -338,6 +360,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -353,11 +376,23 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806041453077_m1.resx">
-      <DependentUpon>201806041453077_m1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806101536234_m1.resx">
+      <DependentUpon>201806101536234_m1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806062204537_m2.resx">
-      <DependentUpon>201806062204537_m2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806131005511_m2.resx">
+      <DependentUpon>201806131005511_m2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806181218055_m3.resx">
+      <DependentUpon>201806181218055_m3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806181631101_m5.resx">
+      <DependentUpon>201806181631101_m5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806181644296_m6.resx">
+      <DependentUpon>201806181644296_m6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806181654173_m9.resx">
+      <DependentUpon>201806181654173_m9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

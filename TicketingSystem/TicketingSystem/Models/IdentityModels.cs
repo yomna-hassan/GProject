@@ -24,9 +24,10 @@ namespace TicketingSystem.Models
             return userIdentity;
         }
 
-     
         
-        public string image { get; set; }
+        public string Name { get; set; }
+
+       // public string image { get; set; }
         [ForeignKey("Layer")]
 
         [XmlIgnore]

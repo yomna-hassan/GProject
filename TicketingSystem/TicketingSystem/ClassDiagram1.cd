@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TicketingSystem.Models.AddExternalLoginBindingModel">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.ChangePasswordBindingModel">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.RegisterBindingModel">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAKAAAAAAAAAAAAQAAgAAAAACAQAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.RegisterExternalBindingModel">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.RemoveLoginBindingModel">
+    <Position X="4.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.SetPasswordBindingModel">
+    <Position X="6" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.ExternalLoginViewModel">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAABAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.ManageInfoViewModel">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAQAQAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.UserInfoViewModel">
+    <Position X="7.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAEAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.UserLoginInfoViewModel">
+    <Position X="2.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.ConnectedUser">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAgAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ConnectedUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.IntegratedModel">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAEIgAAAAAQAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Models\IntegratedModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.ApplicationUser">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAACAAAAAAAAAAAAAQAAAEAAAAEAAAAAQAAAIA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.ApplicationDbContext">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgAAAAQAAAAAAAAAAAAAAAAkAFAAAIAAAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.Layer_SLA">
+    <Position X="6" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAAAAAAAAAAAAAAAAAAAAAAAAAAEAABAAAAAAAA=</HashCode>
+      <FileName>Models\Layer-SLA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.Layer">
+    <Position X="4.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgCAgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Layer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.Presence">
+    <Position X="2.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAgAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Presence.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.SLA">
+    <Position X="4.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAkBAAAAAAAAEAIAAAAAAAAAAAAAAIAAAACAAA=</HashCode>
+      <FileName>Models\SLA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.UserTicket">
+    <Position X="4.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACABAAAEAAAAAABCAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserTicket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Models.Ticket">
+    <Position X="6" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAAAIgAAAAAAAAAAAAAAAAAgAgQECAAAAAAAA=</HashCode>
+      <FileName>Models\Ticket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Controllers.AccountController">
+    <Position X="6" Y="12.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="TicketingSystem.Controllers.AccountController.ExternalLoginData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\AccountController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="TicketingSystem.Controllers.AccountController.RandomOAuthStateGenerator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\AccountController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EAAAFACAACAAgQAAEAARAgIAABABEBAAAAAAgAAAAQA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Controllers.HomeController">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Controllers.LayerController">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAQAABAAAAAAAIAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Controllers\LayerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Controllers.RoleController">
+    <Position X="7.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\RoleController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Controllers.SlaController">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAABAAAAAAQAACAAAAAAAAQAAAABAAAg=</HashCode>
+      <FileName>Controllers\SlaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Controllers.TechnicianController">
+    <Position X="7.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAQCQAAAAAAACACAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\TechnicianController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Controllers.TickController">
+    <Position X="9.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAQAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\TickController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Controllers.TicketController">
+    <Position X="7.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAQAAAAAAAAAAAASAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\TicketController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TicketingSystem.Controllers.ValuesController">
+    <Position X="11.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAACAEAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Controllers\ValuesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Web.Http.ApiController" Collapsed="true">
+    <Position X="14.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="TicketingSystem.Models.Status">
+    <Position X="2.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAIAAAAAAAAAAAAAAAAAABAAABAAAAAAA=</HashCode>
+      <FileName>Models\Ticket.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

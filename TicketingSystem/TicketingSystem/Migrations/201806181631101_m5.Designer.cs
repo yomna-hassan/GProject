@@ -7,13 +7,13 @@ namespace TicketingSystem.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class m2 : IMigrationMetadata
+    public sealed partial class m5 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(m2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(m5));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806062204537_m2"; }
+            get { return "201806181631101_m5"; }
         }
         
         string IMigrationMetadata.Source

@@ -38,7 +38,7 @@ namespace TicketingSystem.Models
         [Display(Name = "User Name")]
         public string UserName { get; set; }
 
-        [Required]
+  
         [Display(Name = "Email")]
         public string Email { get; set; }
 
@@ -54,13 +54,20 @@ namespace TicketingSystem.Models
         public string ConfirmPassword { get; set; }
 
         [Display(Name = "Layer_Id")]
-        public int layer_id { get; set; }
+        public int Layer_Id { get; set; }
+
+        //[Display(Name ="image")]
+        //public string image { get; set; }
+
+        public string Name { get; set; }
+
+        public string[] Roles { get; set; }
     }
 
     public class RegisterExternalBindingModel
     {
-        [Required]
-        [Display(Name = "Email")]
+    
+       [Display(Name = "Email")]
         public string Email { get; set; }
     }
 

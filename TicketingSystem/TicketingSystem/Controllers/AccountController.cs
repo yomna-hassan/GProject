@@ -323,12 +323,13 @@ namespace TicketingSystem.Controllers
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
         {
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var user = new ApplicationUser() { UserName = model.UserName, Email = model.Email,layer_id=model.layer_id};
+            var user = new ApplicationUser() { Name = model.Name, UserName = model.UserName, Email = model.Email, layer_id = model.Layer_Id };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
@@ -336,11 +337,11 @@ namespace TicketingSystem.Controllers
             {
                 return GetErrorResult(result);
             }
+            UserManager.AddToRoles(user.Id, model.Roles);
 
             return Ok();
         }
 
-        // POST api/Account/RegisterExternal
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("RegisterExternal")]
@@ -368,7 +369,7 @@ namespace TicketingSystem.Controllers
             result = await UserManager.AddLoginAsync(user.Id, info.Login);
             if (!result.Succeeded)
             {
-                return GetErrorResult(result); 
+                return GetErrorResult(result);
             }
             return Ok();
         }

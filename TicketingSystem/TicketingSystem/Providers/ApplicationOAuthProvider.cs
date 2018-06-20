@@ -10,6 +10,8 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using TicketingSystem.Models;
+using System.Web.Security;
+using System.Data;
 
 namespace TicketingSystem.Providers
 {
@@ -38,13 +40,14 @@ namespace TicketingSystem.Providers
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
                 return;
             }
+        
 
             ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
                OAuthDefaults.AuthenticationType);
             ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
                 CookieAuthenticationDefaults.AuthenticationType);
 
-            AuthenticationProperties properties = CreateProperties(user.UserName);
+            AuthenticationProperties properties = CreateProperties(user.UserName/*,user.Roles.ToList()*/);
             AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
@@ -88,9 +91,19 @@ namespace TicketingSystem.Providers
 
         public static AuthenticationProperties CreateProperties(string userName)
         {
+
+             ApplicationDbContext db = new ApplicationDbContext();
+            string id=db.Users.FirstOrDefault(u => u.UserName == userName).Id;
+
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var userRoles = userManager.GetRoles(id);
             IDictionary<string, string> data = new Dictionary<string, string>
             {
-                { "userName", userName }
+
+                { "userName", userName },
+                {"role",Newtonsoft.Json.JsonConvert.SerializeObject(userRoles) }
+
+               // {"Role", UserRoles[]}
             };
             return new AuthenticationProperties(data);
         }

@@ -13,10 +13,10 @@ namespace TicketingSystem.Controllers
     {
         ApplicationDbContext db = new ApplicationDbContext();
         public List<Ticket> Tickets = new List<Ticket>();
-
+        
        [Route("api/Tick/{UserId}")]
         [HttpPost]
-        public IHttpActionResult Post([FromBody]Ticket newTicket, [FromUri]string UserId)//
+        public IHttpActionResult Post([FromBody]Ticket newTicket, [FromUri]string UserId)
         {
             if (newTicket == null)
             {
@@ -24,26 +24,33 @@ namespace TicketingSystem.Controllers
             }
             else
             {
-
+                newTicket.Ticket_Id = 2000;
                 newTicket.status = Status.OnHold;
 
                 //newticket.Ticket_date = Convert.ToDateTime("2018-06-04 04:13:30.1");
                 // newticket.Ticket_date = DateTime.Now;
                 //Add to ticket table
                 db.Tickets.Add(newTicket);
+       
 
                 UserTicket UserTicket = new UserTicket();
                 UserTicket.Ticket_id = newTicket.Ticket_Id;
                 UserTicket.User_id = UserId;
                 UserTicket.Status = Status.OnHold;
+                
 
                 //Add to userticket table
                 db.UserTickets.Add(UserTicket);
                 db.SaveChanges();
+                
+                //publish the update to signal r hub
+                //Hubs.NotificationHub.BroadcastCommonDataStatic(newTicket);
                 return Created("Ticket:", newTicket);
 
 
             }
         }
+
+       
     }
 }

@@ -17,6 +17,7 @@ namespace TicketingSystem.Models
     {
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Ticket_Id { get; set; }
 
         [Required]
