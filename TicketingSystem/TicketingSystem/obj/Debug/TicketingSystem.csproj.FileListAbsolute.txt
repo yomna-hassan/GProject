@@ -88,5 +88,4 @@ C:\Users\Dell\Desktop\GProject\TicketingSystem\TicketingSystem\obj\Debug\Ticketi
 C:\Users\Dell\Desktop\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.pdb
 C:\Users\Dell\Desktop\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.csprojResolveAssemblyReference.cache
 C:\Users\Dell\Desktop\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Migrations.update.resources
-C:\Users\Dell\Desktop\GProject\TicketingSystem\TicketingSystem\bin\System.Web.Http.Cors.dll
-C:\Users\Dell\Desktop\GProject\TicketingSystem\TicketingSystem\bin\System.Web.Http.Cors.xml
+C:\Users\Dell\Desktop\GProject\TicketingSystem\TicketingSystem\obj\Debug\TicketingSystem.Migrations.m3.resources

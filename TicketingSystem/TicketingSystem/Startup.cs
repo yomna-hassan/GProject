@@ -73,18 +73,18 @@ namespace TicketingSystem
 
             ConfigureAuth(app);
             CreateRoleAndUser();
-            app.Map("/signalr", map =>
-            {
-                map.UseCors(CorsOptions.AllowAll);
-                var hubConfiguration = new HubConfiguration
-                {
-                    EnableJSONP = true,
-                    EnableJavaScriptProxies = true,
+        //    app.Map("/signalr", map =>
+        //    {
+        //        map.UseCors(CorsOptions.AllowAll);
+        //    var hubConfiguration = new HubConfiguration
+        //    {
+        //        EnableJSONP = true,
+        //        EnableJavaScriptProxies = true,
 
-                };
-                map.RunSignalR(hubConfiguration);
-            });
-            app.UseCors(CorsOptions.AllowAll);
+        //    };
+        //    map.RunSignalR(hubConfiguration);
+        //});
+        //    app.UseCors(CorsOptions.AllowAll);
             //app.MapSignalR();
         }
     }   

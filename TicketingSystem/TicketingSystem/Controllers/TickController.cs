@@ -17,7 +17,8 @@ namespace TicketingSystem.Controllers
         ApplicationDbContext db = new ApplicationDbContext();
         public List<Ticket> Tickets = new List<Ticket>();
         
-       [Route("api/Tick/{UserId}")]
+        //[EnableCors("*","*","*")]
+        [Route("api/Tick/{UserId}")]
         [HttpPost]
         public IHttpActionResult Post([FromBody]Ticket newTicket, [FromUri]string UserId)//
         {
@@ -121,9 +122,9 @@ namespace TicketingSystem.Controllers
         public List<Ticket> UserHoldTickets = new List<Ticket>();
         public List<UserTicket> UserTickets = new List<UserTicket>();
         public List<int> TicketsIds = new List<int>();
-        [Route("api/Tick/{Id}")]
+        [Route("api/Tick/Hold/{Id}")]
         [HttpGet]
-        public IHttpActionResult GetById([FromUri]string Id)
+        public IHttpActionResult GetHoldById([FromUri]string Id)
         {
             UserTickets = db.UserTickets.Where(a => a.User_id == Id&&a.Status==Status.OnHold).ToList();
             if (UserTickets != null)
@@ -141,19 +142,89 @@ namespace TicketingSystem.Controllers
             return NotFound();
         }
 
+        public List<Ticket> UserOpenedTickets = new List<Ticket>();
+        [Route("api/Tick/Opened/{Id}")]
+        [HttpGet]
+        public IHttpActionResult GetOpenedById([FromUri]string Id)
+        {
+            UserTickets = db.UserTickets.Where(a => a.User_id == Id && a.Status == Status.Open).ToList();
+            if (UserTickets != null)
+            {
+                foreach (var u in UserTickets)
+                {
+                    TicketsIds.Add(u.Ticket_id);
+                }
+                foreach (var t in TicketsIds)
+                {
+                    UserOpenedTickets.Add(db.Tickets.FirstOrDefault(a => a.Ticket_Id == t));
+                }
+                return Ok(UserOpenedTickets);
+            }
+            return NotFound();
+        }
+
         Ticket OldTicket = new Ticket();
         UserTicket OldUserTicket = new UserTicket();
      
-        [Route("api/Tick/{Id}")]  
-        [HttpPut]
-        public IHttpActionResult Put([FromUri]int Id,[FromBody]Ticket NewTicket)
+        [Route("api/Tick/Update/Hold/{Id}")]  
+        [HttpPost]
+        public IHttpActionResult PutHold([FromUri]string Id,[FromBody]Ticket NewTicket)
         {
             OldTicket = db.Tickets.FirstOrDefault(a => a.Ticket_Id == NewTicket.Ticket_Id);
             OldTicket.status = Status.Open;
-            OldUserTicket = db.UserTickets.FirstOrDefault(a => a.Ticket_id == NewTicket.Ticket_Id);
+            OldUserTicket = db.UserTickets.FirstOrDefault(a => a.Ticket_id == NewTicket.Ticket_Id&&a.User_id==Id);
             OldUserTicket.Status = Status.Open;
             db.SaveChanges();
-            return Ok(NewTicket);
+            Layer_SLA layerSla=db.LayerSLAs.OrderBy(a => a.LayerId).FirstOrDefault(s=>s.SLAId==NewTicket.SLA_Id);
+            int? layerTime= layerSla.Time;
+            return Ok(layerTime);
+        }
+
+        [Route("api/Tick/Update/Open/{Id}")]
+        [HttpPost]
+        public IHttpActionResult PutOpen([FromUri]string Id, [FromBody]Ticket NewTicket)
+        {
+            OldTicket = db.Tickets.FirstOrDefault(a => a.Ticket_Id == NewTicket.Ticket_Id);
+            OldTicket.status = Status.Done;
+            OldUserTicket = db.UserTickets.FirstOrDefault(a => a.Ticket_id == NewTicket.Ticket_Id&&a.User_id==Id);
+            OldUserTicket.Status = Status.Done;
+            db.SaveChanges();
+            return Ok();
+        }
+
+        [Route("api/Tick/Update/Undone/{Id}")]
+        [HttpPost]
+        public IHttpActionResult PutUndone([FromUri]string Id, [FromBody]Ticket NewTicket)
+        {
+            UserTicket UndoneUserTicket=db.UserTickets.FirstOrDefault(a => a.User_id == Id && a.Ticket_id == NewTicket.Ticket_Id);
+            UndoneUserTicket.Status = Status.OverDue;
+            ApplicationUser UndoneUser = db.Users.FirstOrDefault(a => a.Id == Id);
+            int? layerId = UndoneUser.layer_id;
+            //Edit ticket status and assign it to another one
+            NewTicket.status = Status.OnHold;
+            if (layerId < db.Layers.Count())
+            {
+                layerId += 1;
+                List<ApplicationUser> UsersOfNextLayer = new List<ApplicationUser>();
+                //get random user from next layer
+                UsersOfNextLayer =db.Users.Where(a=>a.layer_id==layerId).ToList();
+                Random rnd = new Random();
+                int r = rnd.Next(UsersOfNextLayer.Count());
+                ApplicationUser RandomUser = UsersOfNextLayer[r];
+
+                UserTicket UserTicket = new UserTicket();
+                UserTicket.Ticket_id = NewTicket.Ticket_Id;
+                UserTicket.User_id = RandomUser.Id;
+                UserTicket.Status = Status.OnHold;
+
+                //Add to userticket table
+                db.UserTickets.Add(UserTicket);
+                db.SaveChanges();
+                return Ok(RandomUser);
+            }
+
+            //there's no more layers
+            return StatusCode(HttpStatusCode.NoContent);
         }
         public List<TicketTechnician> map(List<Ticket> ticket)
         {
