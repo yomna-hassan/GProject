@@ -251,18 +251,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+
     <Compile Include="Hubs\NotificationHub.cs" />
     <Compile Include="Migrations\201806101536234_m1.cs" />
-    <Compile Include="Migrations\201806101536234_m1.Designer.cs">
-      <DependentUpon>201806101536234_m1.cs</DependentUpon>
-=======
+   
     <Compile Include="hubs\NotificationHub.cs" />
     <Compile Include="IClient.cs" />
     <Compile Include="Migrations\201806041453077_m1.cs" />
     <Compile Include="Migrations\201806041453077_m1.Designer.cs">
       <DependentUpon>201806041453077_m1.cs</DependentUpon>
->>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
+
     </Compile>
     <Compile Include="Migrations\201806131005511_m2.cs" />
     <Compile Include="Migrations\201806131005511_m2.Designer.cs">

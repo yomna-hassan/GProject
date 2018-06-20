@@ -261,3 +261,10 @@ __pycache__/
 *.pyc
 *.Cache
 *.Cache
+*.config
+TicketingSystem/.vs/TicketingSystem/v15/.suo
+TicketingSystem/TicketingSystem/Controllers/SlaController.cs
+TicketingSystem/TicketingSystem/Controllers/TickController.cs
+TicketingSystem/TicketingSystem/obj/Debug/TicketingSystem.csproj.CoreCompileInputs.cache
+TicketingSystem/TicketingSystem/TicketingSystem.csproj
+TicketingSystem/.vs/config/applicationhost.config

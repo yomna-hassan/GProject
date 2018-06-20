@@ -16,13 +16,12 @@ namespace TicketingSystem.Controllers
     {
         ApplicationDbContext db = new ApplicationDbContext();
         public List<Ticket> Tickets = new List<Ticket>();
-        
-<<<<<<< HEAD
+
        [Route("api/Tick/{UserId}")]
-=======
+
         //[EnableCors("*","*","*")]
         [Route("api/Tick/{UserId}")]
->>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
+
         [HttpPost]
         public IHttpActionResult Post([FromBody]Ticket newTicket, [FromUri]string UserId)
         {
@@ -32,11 +31,9 @@ namespace TicketingSystem.Controllers
             }
             else
             {
-<<<<<<< HEAD
+
                 newTicket.Ticket_Id = 2000;
-=======
-                
->>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
+
                 newTicket.status = Status.OnHold;
                 newTicket.Ticket_date = DateTime.Now;
 
@@ -54,11 +51,11 @@ namespace TicketingSystem.Controllers
 
                 //Add to userticket table
                 db.UserTickets.Add(UserTicket);
-<<<<<<< HEAD
+
                 db.SaveChanges();
-=======
-                 db.SaveChanges();
->>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
+
+                 //db.SaveChanges();
+
                 
                 //publish the update to signal r hub
                 //Hubs.NotificationHub.BroadcastCommonDataStatic(newTicket);
@@ -68,9 +65,7 @@ namespace TicketingSystem.Controllers
             }
         }
 
-<<<<<<< HEAD
-       
-=======
+
         public List<Ticket> OnHoldTickets = new List<Ticket>();
         [Route("api/Tick/OnHold")]
         [HttpGet]
@@ -253,6 +248,6 @@ namespace TicketingSystem.Controllers
             return tic;
         }
 
->>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
+
     }
 }
