@@ -27,15 +27,23 @@ namespace TicketingSystem.Controllers
         }
 
         [HttpPost]
+<<<<<<< HEAD
         public IHttpActionResult Post(IntegratedModel two)
         {
            
             if (two == null)
+=======
+        public IHttpActionResult Post(SLA sla ,Layer_SLA[] layersSla)
+        {
+           
+            if (sla == null)
+>>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
             {
                 return BadRequest();
             }
             else
             {
+<<<<<<< HEAD
                 //dummy
                // two.slaid = 2000;
                 SLA s = new SLA();
@@ -70,6 +78,30 @@ namespace TicketingSystem.Controllers
             SLA sla =db.SLAs.FirstOrDefault(s => s.SLA_id == id);
             List<Layer_SLA> layerssla = db.LayerSLAs.Where(s => s.SLAId == id).ToList();
             
+=======
+                db.SLAs.Add(sla);
+                
+                
+                foreach(var l in layersSla)
+                {
+                    Layer_SLA LayerSla = new Layer_SLA();
+                    LayerSla.SLAId = sla.SLA_id;
+                    LayerSla.LayerId = l.LayerId;
+                    layers_slas.Add(LayerSla);
+
+                }
+              
+
+
+                db.SaveChanges();
+                return Ok(sla);
+            }
+            
+        }
+        public IHttpActionResult Put(SLA newsla)
+        {
+           // SLA sla = Slas.Find(s => s.SLA_id == id);
+>>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
             if (newsla == null)
             {
                 return BadRequest();
@@ -78,12 +110,17 @@ namespace TicketingSystem.Controllers
             {
                 return BadRequest();
             }
+<<<<<<< HEAD
             else if(db.SLAs.FirstOrDefault(s=>s.SLA_id==id)==null)
+=======
+            else if(db.SLAs.FirstOrDefault(s=>s.SLA_id==newsla.SLA_id)==null)
+>>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
             {
                 return NotFound();
             }
             else
             {
+<<<<<<< HEAD
                 sla.SLA_name = newsla.slaname;
                 sla.L1_Time = newsla.l1time;
                 sla.L2_Time = newsla.l2time;
@@ -105,24 +142,45 @@ namespace TicketingSystem.Controllers
         public IHttpActionResult Delete(int Id)
         {
             SLA sla = db.SLAs.FirstOrDefault(s => s.SLA_id == Id);
+=======
+                db.Entry(newsla).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Ok();
+            }
+
+        }
+
+        public IHttpActionResult delete(int id)
+        {
+            SLA sla = Slas.Find(s => s.SLA_id == id);
+>>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
             if (sla == null)
             {
                 return NotFound();
             }
             else
             {
+<<<<<<< HEAD
                 db.SLAs.Remove(sla);
                // Slas.Remove(sla);
                 db.SaveChanges();
 
                 List<Layer_SLA> removable = new List<Layer_SLA>();
                 removable = db.LayerSLAs.Where(n => n.SLAId == Id).ToList();
+=======
+                Slas.Remove(sla);
+                List<Layer_SLA> removable = new List<Layer_SLA>();
+                removable = db.LayerSLAs.Where(n => n.SLAId == id).ToList();
+>>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
 
                 foreach(var item in removable)
                 {
                     layers_slas.Remove(item);
                 }
+<<<<<<< HEAD
                 db.SaveChanges();
+=======
+>>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
 
                 
 

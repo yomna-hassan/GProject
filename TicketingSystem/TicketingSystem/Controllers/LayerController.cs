@@ -21,7 +21,10 @@ namespace TicketingSystem.Controllers
 
             // get all layers
         [HttpGet]
+<<<<<<< HEAD
         [Route("api/layer")]
+=======
+>>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
         public IHttpActionResult Get()
         {
 

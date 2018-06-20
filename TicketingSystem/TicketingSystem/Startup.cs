@@ -7,6 +7,11 @@ using TicketingSystem.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Cors;
+<<<<<<< HEAD
+=======
+using Microsoft.AspNet.SignalR;
+using System.Web.Routing;
+>>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
 //using Microsoft.Owin.Cors;
 
 [assembly: OwinStartup(typeof(TicketingSystem.Startup))]
@@ -19,7 +24,7 @@ namespace TicketingSystem
         //create roles and assign super admin role to super admin user  
         private void CreateRoleAndUser()
         {
-           
+
             var rolemanager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
             var usermanager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
 
@@ -35,9 +40,9 @@ namespace TicketingSystem
                 user.Email = "ahmed@gmail.com";
 
                 string userpassword = "Ahmed_23";
-                var checkuser= usermanager.Create(user, userpassword);
+                var checkuser = usermanager.Create(user, userpassword);
 
-                if(checkuser.Succeeded)
+                if (checkuser.Succeeded)
                 {
                     var result = usermanager.AddToRole(user.Id, "SuperAdmin");
                 }
@@ -47,7 +52,7 @@ namespace TicketingSystem
             {
                 var role = new IdentityRole();
                 role.Name = "Dispature";
-                rolemanager.Create(role);   
+                rolemanager.Create(role);
             }
 
             if (!rolemanager.RoleExists("Technician"))
@@ -56,25 +61,39 @@ namespace TicketingSystem
                 role.Name = "Technician";
                 rolemanager.Create(role);
 
-             
+
             }
-           
-           
+
+
 
 
         }
 
-  
+
         public void Configuration(IAppBuilder app)
         {
+           
 
+<<<<<<< HEAD
             //app.UseCors(CorsOptions.AllowAll);
 
+=======
+>>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
             ConfigureAuth(app);
             CreateRoleAndUser();
-            app.MapSignalR();
-            
+        //    app.Map("/signalr", map =>
+        //    {
+        //        map.UseCors(CorsOptions.AllowAll);
+        //    var hubConfiguration = new HubConfiguration
+        //    {
+        //        EnableJSONP = true,
+        //        EnableJavaScriptProxies = true,
 
+        //    };
+        //    map.RunSignalR(hubConfiguration);
+        //});
+        //    app.UseCors(CorsOptions.AllowAll);
+            //app.MapSignalR();
         }
-    }
+    }   
 }

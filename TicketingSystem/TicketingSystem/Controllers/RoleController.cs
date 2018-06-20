@@ -15,7 +15,11 @@ namespace TicketingSystem.Controllers
         ApplicationDbContext db = new ApplicationDbContext();
 
         [HttpGet]
+<<<<<<< HEAD
         [Route("api/role")]
+=======
+        [Route("api/role/get")]
+>>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
         public IHttpActionResult Get()
         {
 

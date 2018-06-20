@@ -21,8 +21,10 @@ namespace TicketingSystem.Models
         [ForeignKey("SLA")]
         [Column(Order = 2)]
         public int SLAId { get; set; }
+        public int? Time { get; set; }
 
         public Layer Layer { get; set; }
         public SLA SLA { get; set; }
+
     }
 }

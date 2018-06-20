@@ -251,10 +251,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Hubs\NotificationHub.cs" />
     <Compile Include="Migrations\201806101536234_m1.cs" />
     <Compile Include="Migrations\201806101536234_m1.Designer.cs">
       <DependentUpon>201806101536234_m1.cs</DependentUpon>
+=======
+    <Compile Include="hubs\NotificationHub.cs" />
+    <Compile Include="IClient.cs" />
+    <Compile Include="Migrations\201806041453077_m1.cs" />
+    <Compile Include="Migrations\201806041453077_m1.Designer.cs">
+      <DependentUpon>201806041453077_m1.cs</DependentUpon>
+>>>>>>> 578d4c7ee5b60ecc797f719bcee5e2c97e7e4978
     </Compile>
     <Compile Include="Migrations\201806131005511_m2.cs" />
     <Compile Include="Migrations\201806131005511_m2.Designer.cs">
@@ -276,6 +284,14 @@
     <Compile Include="Migrations\201806181654173_m9.Designer.cs">
       <DependentUpon>201806181654173_m9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806141105551_update.cs" />
+    <Compile Include="Migrations\201806141105551_update.Designer.cs">
+      <DependentUpon>201806141105551_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806191954391_m3.cs" />
+    <Compile Include="Migrations\201806191954391_m3.Designer.cs">
+      <DependentUpon>201806191954391_m3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -292,6 +308,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="View_Models\TicketTechnician.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -393,6 +410,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806181654173_m9.resx">
       <DependentUpon>201806181654173_m9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806141105551_update.resx">
+      <DependentUpon>201806141105551_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806191954391_m3.resx">
+      <DependentUpon>201806191954391_m3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
